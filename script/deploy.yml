@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  pingview-server:
+    image: ghcr.io/pingview/server:latest
+    ports:
+      - "8081:8081"
+  pingview-web:
+    image: ghcr.io/pingview/web:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - pingview-server
